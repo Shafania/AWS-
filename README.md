@@ -10,7 +10,7 @@ So you are renting it from cloud.
 
 **PUBLIC VS PRIVATE CLOUD**
 
-Public Cloud: Anybody who has account with AWS, AWS manages enter system and configuration and you are controlling it.
+Public Cloud: Anybody who has account with AWS can use services, AWS manages entire system and configuration and user is controlling it.
 
 Public Cloud: An organization which is managing its own cloud platform and is isolated one and has boundaries.
 
