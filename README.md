@@ -4,8 +4,9 @@ It is an IT resources delivery over the internet as pay per demand basis.It offe
 
 _**Example:**_
 Instead of buying servers, you are renting servers.
-Virtualization: Companies used to have more number of datacenters and they were costly and has more capacity. If only one app is running, then there will be wastage of resources on server. So using virtualization we can creating multiple virtual servers and we can launch mutiple virtual machines and run multiple apps on the same server.
-So you are renting it from cloud services.
+
+Virtualization: Companies used to have more number of datacenters and they were costly and has more capacity. If only one app is running, then there will be wastage of resources on server. So using virtualization we can create multiple virtual servers and we can launch mutiple virtual machines and run multiple apps on the same server.
+So you are renting it from cloud.
 
 **PUBLIC VS PRIVATE CLOUD**
 
