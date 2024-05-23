@@ -1,0 +1,43 @@
+WHAT IS IAM?
+IAM, or Identity and Access Management, is a crucial component of Amazon Web Services (AWS) that helps you manage access to AWS services and resources securely. It enables you to create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources
+
+Example: 
+Consider a bank which has 3 departments: service desk, employee desk, Sensitive area and only authenticated person of the bank to enter.
+They will verify whether its employee, account holder or visitor.
+Authentication is Authorization is required when you enter and you will be routed accordingly. There is be no harm caused in bank.
+Similarly in AWS: When you create AWS account, you have root account, and if many people in company has access to same root account and they may accidently delete some data, so we need to create IAM account for each and everyone to perform authentication and authorization.
+
+IAM COMPONENTS
+
+Users
+Groups
+Role
+Policies
+
+USERS:
+An IAM user is an entity that represents a person or service that interacts with AWS resources. Each IAM user has unique credentials and permissions.
+Credentials: IAM users can have credentials for console access (username and password) and/or programmatic access (access keys).
+Permissions: Users are granted permissions through policies that define what actions they can perform on which resources.
+
+IAM Groups:
+Definition: An IAM group is a collection of IAM users. Groups simplify the management of permissions for multiple users.
+Permissions: Policies attached to a group apply to all users within the group. This makes it easier to manage common permissions for a set of users.
+
+---People keep joining and leaving company and if you have already have groups of production, testing and opeartions groups, it will be easy to add or remove user from group and grant access. You will ask user to raise JIRA ticket mentioning which team he belongs to and what access is needed.
+
+IAM Roles:
+Definition: An IAM role is an entity that defines a set of permissions for making AWS service requests. Roles are not associated with a specific user or group but can be assumed by trusted entities.
+
+--Use Cases:
+Service Roles: Allow AWS services to perform actions on your behalf.
+Cross-Account Access: Enable users or services in one AWS account to access resources in another account.
+Federated Users: Allow users authenticated by an external identity provider (like AWS SSO, Google, or Active Directory) to assume roles and access AWS resources.
+Assume Role: Entities assume roles using AWS Security Token Service (STS) to obtain temporary security credentials.
+Roles are similar to users and they are created for temporary purpose.
+
+IAM Policies: Used to grant or deny permissions.
+Definition: Policies are documents that define permissions. They specify what actions are allowed or denied on which resources.
+Types:
+Managed Policies: These can be AWS-managed or customer-managed. AWS-managed policies are created and managed by AWS, while customer-managed policies are created and managed by you.
+Inline Policies: These are policies that are directly embedded within a single user, group, or role. They are not reusable across multiple entities.
+Structure: Policies are written in JSON and include statements that specify effect (allow or deny), actions, resources, and conditions.
