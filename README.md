@@ -7,12 +7,15 @@ Virtualization: Companies used to have more number of datacenters and they were 
 So you are renting it from cloud services.
 
 **PUBLIC VS PRIVATE CLOUD**
-Public Cloud: Anybody who has account with AWS, AWS manages enter systema nd configuration and you are controlling it.
+Public Cloud: Anybody who has account with AWS, AWS manages enter system and configuration and you are controlling it.
+
 Public Cloud: An organization which is managing its own cloud platform and is isolated one and has boundaries.
 
 **HOW AWS IS BETTER THAN OTHER CLOUD?**
 --AWS offers the most extensive suite of services, covering everything from compute, storage, and databases to machine learning, artificial intelligence, and Internet of Things (IoT).
+
 --AWS consistently rolls out new services and features, often based on customer feedback. This innovation ensures that they stay ahead in terms of technology and capabilities.
+
 --AWS has the largest global network of data centers, known as Regions and Availability Zones. This extensive infrastructure allows customers to deploy applications and services with low latency, high availability, and redundancy across the globe.
 
 **CREATE AWS ACCOUNT BY ENTERING YOUR CREDENTIALS AND YOU ARE READY TO USE AND LAUNCH RESOURCES ON CLOUD**
