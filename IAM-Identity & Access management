@@ -1,33 +1,41 @@
-WHAT IS IAM?
+***WHAT IS IAM?***
 IAM, or Identity and Access Management, is a crucial component of Amazon Web Services (AWS) that helps you manage access to AWS services and resources securely. It enables you to create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources
 
-Example: 
+---------------------Example:----------------------------
 Consider a bank which has 3 departments: service desk, employee desk, Sensitive area and only authenticated person of the bank to enter.
 They will verify whether its employee, account holder or visitor.
 Authentication is Authorization is required when you enter and you will be routed accordingly. There is be no harm caused in bank.
 Similarly in AWS: When you create AWS account, you have root account, and if many people in company has access to same root account and they may accidently delete some data, so we need to create IAM account for each and everyone to perform authentication and authorization.
+AWS IAM (Identity and Access Management) is a service provided by Amazon Web Services (AWS) that helps you manage access to your AWS resources. It's like a security system for your AWS account.
 
-IAM COMPONENTS
+IAM allows you to create and manage users, groups, and roles. Users represent individual people or entities who need access to your AWS resources. Groups are collections of users with similar access requirements, making it easier to manage permissions. Roles are used to grant temporary access to external entities or services.
 
+With IAM, you can control and define permissions through policies. Policies are written in JSON format and specify what actions are allowed or denied on specific AWS resources. These policies can be attached to IAM entities (users, groups, or roles) to grant or restrict access to AWS services and resources.
+
+IAM follows the principle of least privilege, meaning users and entities are given only the necessary permissions required for their tasks, minimizing potential security risks. IAM also provides features like multi-factor authentication (MFA) for added security and an audit trail to track user activity and changes to permissions.
+
+By using AWS IAM, you can effectively manage and secure access to your AWS resources, ensuring that only authorized individuals have appropriate permissions and actions are logged for accountability and compliance purposes.
+
+Overall, IAM is an essential component of AWS security, providing granular control over access to your AWS account and resources, reducing the risk of unauthorized access and helping maintain a secure environment.
+
+********IAM COMPONENTS*********
 Users
 Groups
 Role
 Policies
 
-USERS:
+>>>USERS:
 An IAM user is an entity that represents a person or service that interacts with AWS resources. Each IAM user has unique credentials and permissions.
 Credentials: IAM users can have credentials for console access (username and password) and/or programmatic access (access keys).
 Permissions: Users are granted permissions through policies that define what actions they can perform on which resources.
 
-IAM Groups:
+>>>IAM Groups:
 Definition: An IAM group is a collection of IAM users. Groups simplify the management of permissions for multiple users.
 Permissions: Policies attached to a group apply to all users within the group. This makes it easier to manage common permissions for a set of users.
-
 ---People keep joining and leaving company and if you have already have groups of production, testing and opeartions groups, it will be easy to add or remove user from group and grant access. You will ask user to raise JIRA ticket mentioning which team he belongs to and what access is needed.
 
-IAM Roles:
+>>>IAM Roles:
 Definition: An IAM role is an entity that defines a set of permissions for making AWS service requests. Roles are not associated with a specific user or group but can be assumed by trusted entities.
-
 --Use Cases:
 Service Roles: Allow AWS services to perform actions on your behalf.
 Cross-Account Access: Enable users or services in one AWS account to access resources in another account.
@@ -35,9 +43,126 @@ Federated Users: Allow users authenticated by an external identity provider (lik
 Assume Role: Entities assume roles using AWS Security Token Service (STS) to obtain temporary security credentials.
 Roles are similar to users and they are created for temporary purpose.
 
-IAM Policies: Used to grant or deny permissions.
+>>>IAM Policies: Used to grant or deny permissions.
 Definition: Policies are documents that define permissions. They specify what actions are allowed or denied on which resources.
 Types:
 Managed Policies: These can be AWS-managed or customer-managed. AWS-managed policies are created and managed by AWS, while customer-managed policies are created and managed by you.
 Inline Policies: These are policies that are directly embedded within a single user, group, or role. They are not reusable across multiple entities.
 Structure: Policies are written in JSON and include statements that specify effect (allow or deny), actions, resources, and conditions.
+
+********IAM HANDSON********
+
+===========>>CREATE USER:====================
+AWS Management Console
+Sign in to the AWS Management Console
+
+Open the AWS Management Console at https://console.aws.amazon.com/.
+Sign in with your AWS credentials.
+Open the IAM console
+
+In the AWS Management Console, search for "IAM" in the services search bar and select "IAM" from the results.
+Add User
+
+In the navigation pane on the left, click on "Users".
+Click on the "Add user" button.
+Set user details
+
+User name: Enter a user name for the new user. For example, MyUser.
+Access type: Choose the type of access this user will have.
+Programmatic access: Select this if the user needs to access the AWS API, CLI, SDK, or other development tools.
+AWS Management Console access: Select this if the user needs to sign in to the AWS Management Console. If selected, set a console password (either auto-generated or custom). Always select chnage password after firstlogin.
+select default settings.
+
+Click on "Next: Review".
+Review and create
+
+=============>>>Attaching the IAM Policy to a User/Group/Role:========================
+Navigate to Users/Groups/Roles:
+
+In the IAM console, click on "Users", "Groups", or "Roles" depending on where you want to attach the policy.
+Select the user/group/role:
+
+Click on the user, group, or role to which you want to attach the policy.
+Permissions tab:
+
+Click on the "Permissions" tab.
+Add permissions:
+
+Click on the "Add permissions" button.
+Attach policies:
+
+Choose "Attach policies directly" if you want to attach the policy you just created directly to the user/group/role.
+Choose "Attach policies by group" if you want to attach the policy to a group and then add the user to that group.
+Choose "Attach existing policies directly" if you want to attach an existing policy from the AWS managed policies or customer managed policies.
+Search and select the policy:
+
+Search for the policy you created earlier and select it.
+Review and attach:
+
+Review the permissions and policies being attached.
+Click on the "Add permissions" button to attach the policy.
+
+=====>>>>>Creating an IAM Group:=======================
+Sign in to the AWS Management Console:
+
+Open the AWS Management Console at https://console.aws.amazon.com/.
+Sign in with your AWS credentials.
+Open the IAM console:
+
+In the AWS Management Console, search for "IAM" in the services search bar and select "IAM" from the results.
+Navigate to Groups:
+
+In the left navigation pane, click on "Groups".
+Create Group:
+
+Click on the "Create group" button.
+Group name:
+
+Enter a name for the group. For example, Developers.
+Attach Policy:
+
+Optionally, you can attach policies to the group to define permissions for all users in this group. Click on the "Attach policies" button to attach policies.
+Search and select policies:
+
+Search for the policies you want to attach to the group. You can attach policies directly or choose from AWS managed policies.
+Select the policies and click on the "Attach policy" button.
+Review:
+
+Review the group details and attached policies.
+Click on the "Create group" button to create the group.
+
+================>>>Creating an IAM Role:========================
+Sign in to the AWS Management Console:
+
+Open the AWS Management Console at https://console.aws.amazon.com/.
+Sign in with your AWS credentials.
+Open the IAM console:
+
+In the AWS Management Console, search for "IAM" in the services search bar and select "IAM" from the results.
+Navigate to Roles:
+
+In the left navigation pane, click on "Roles".
+Create Role:
+
+Click on the "Create role" button.
+Select type of trusted entity:
+
+Choose the AWS service that will use this role. Common options include AWS service, another AWS account, or an entity you select. For example, choose "AWS service" if you want to create a role for an AWS service such as EC2.
+Choose the use case:
+
+Select the use case that best fits your scenario. For example, choose "EC2" if you want to grant permissions to an EC2 instance.
+Permissions:
+
+Attach policies to the role to define the permissions it will have. You can attach existing policies or create custom policies.
+Click on the "Next: Tags" button (optional) to add tags to the role.
+Add tags (optional):
+
+Tags are key-value pairs that you can assign to resources to help organize and identify them.
+Click on the "Next: Review" button.
+Review:
+
+Review the role details, including the trusted entities and permissions.
+Click on the "Create role" button.
+Role summary:
+
+After the role is created, you will see a summary page with details about the role, including its ARN (Amazon Resource Name) and policies attached.
