@@ -56,6 +56,24 @@ Assume Role: Entities assume roles using AWS Security Token Service (STS) to obt
 Roles are similar to users and they are created for temporary purpose.
 
 >>>IAM Policies: Used to grant or deny permissions.
+Here's a simpler explanation with an example:
+
+Imagine you're the manager of a library, and you want to control who can borrow books and what they can do with them.
+
+Library Membership Card: Think of this as your IAM user or role. It's what identifies who you are in the library system.
+
+Library Rules: These are like IAM policies. They define what members can do. For example:
+
+Members can borrow up to 3 books at a time.
+Members can return books.
+Members cannot access the librarian's office.
+Actions: These are what members can do. Borrowing, returning, or entering restricted areas are examples of actions.
+Resources: These are the things members can act upon. In our library example, books are the resources.
+So, in IAM terms:
+IAM User/Role: This is like having a library membership card.
+IAM Policies: These are like the library rules that define what actions you can perform (borrow, return) and on what resources (books).
+Actions: Borrowing, returning, deleting, creating, etc. are examples of actions.
+Resources: These are the things you perform actions on, like specific AWS services (e.g., S3 buckets, EC2 instances) in the case of AWS.
 Definition: Policies are documents that define permissions. They specify what actions are allowed or denied on which resources.
 Types:
 Managed Policies: These can be AWS-managed or customer-managed. AWS-managed policies are created and managed by AWS, while customer-managed policies are created and managed by you.
