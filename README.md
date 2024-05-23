@@ -15,6 +15,7 @@ Public Cloud: Anybody who has account with AWS can use services, AWS manages ent
 Public Cloud: An organization which is managing its own cloud platform and is isolated one and has boundaries.
 
 **HOW AWS IS BETTER THAN OTHER CLOUD?**
+
 --AWS offers the most extensive suite of services, covering everything from compute, storage, and databases to machine learning, artificial intelligence, and Internet of Things (IoT).
 
 --AWS consistently rolls out new services and features, often based on customer feedback. This innovation ensures that they stay ahead in terms of technology and capabilities.
