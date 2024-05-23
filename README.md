@@ -1,4 +1,5 @@
 **WHAT IS CLOUD COMPUTING?**
+
 It is an IT resources delivery over the internet as per pay as per you use basis.
 
 _**Example:**_
