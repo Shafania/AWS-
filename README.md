@@ -1,6 +1,6 @@
 **WHAT IS CLOUD COMPUTING?**
 
-It is an IT resources delivery over the internet as pay per demand basis.
+It is an IT resources delivery over the internet as pay per demand basis.It offers services such as compute, storage, networking, database, monitoring, logging and other IT maintanence over the internet.
 
 _**Example:**_
 Instead of buying servers, you are renting servers.
